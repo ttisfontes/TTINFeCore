@@ -1,5 +1,7 @@
 package br.com.tti.ttidesktop.core.persistence;
 
+import java.util.Hashtable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,8 +11,10 @@ public class Usuario {
 
 	@Id
 	private String id;
-	private String name;
-	private String cnpj;
+	private String nome;
+	private String[] cnpj;
+	private String senha;
+	private Hashtable<String, Object> permissoes;
 
 	public String getId() {
 		return id;
@@ -20,28 +24,36 @@ public class Usuario {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public String getCnpj() {
+	public String[] getCnpj() {
 		return cnpj;
 	}
 
-	public void setCnpj(String cnpj) {
+	public void setCnpj(String[] cnpj) {
 		this.cnpj = cnpj;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public Hashtable<String, Object> getPermissoes() {
+		return permissoes;
+	}
+
+	public void setPermissoes(Hashtable<String, Object> permissoes) {
+		this.permissoes = permissoes;
 	}
 
 	@Override
@@ -59,6 +71,11 @@ public class Usuario {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public String getPassword() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

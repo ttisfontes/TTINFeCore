@@ -58,6 +58,17 @@ public class XMLGenerator {
 		return unmarshaller.unmarshal(file);
 	}
 
+	synchronized public <T> T toObjectFromFile(Class<T> classs, File file) throws Exception {
+
+		Object obj = unmarshaller.unmarshal(file);
+		if (obj instanceof JAXBElement) {
+			JAXBElement<T> jax = (JAXBElement<T>) obj;
+			return jax.getValue();
+		} else {
+			return (T) obj;
+		}
+	}
+
 	synchronized public <T> T toObject(Class<T> classs, String str) throws Exception {
 		StringReader r = new StringReader(str);
 		Object obj = unmarshaller.unmarshal(r);

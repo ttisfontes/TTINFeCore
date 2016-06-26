@@ -36,6 +36,8 @@ public class NFeInfo implements Serializable {
 	@Transient
 	private TNFe nfe;
 
+	private NFE_TYPE tipoNfe;
+
 	@Lob
 	private String xmlString;
 
@@ -85,6 +87,14 @@ public class NFeInfo implements Serializable {
 
 	public void setXmlString(String xmlString) {
 		this.xmlString = xmlString;
+	}
+
+	public NFE_TYPE getTipoNfe() {
+		return tipoNfe;
+	}
+
+	public void setTipoNfe(NFE_TYPE tipoNfe) {
+		this.tipoNfe = tipoNfe;
 	}
 
 	@Override

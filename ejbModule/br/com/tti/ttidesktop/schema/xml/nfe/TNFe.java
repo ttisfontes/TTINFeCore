@@ -10,10 +10,13 @@ package br.com.tti.ttidesktop.schema.xml.nfe;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TNFe", propOrder = { "infNFe", "infNFeSupl", "signature" })
+@XmlType(name = "TNFe", propOrder = { "infNFe", "infNFeSupl",
+		"signature" }, namespace = "http://www.portalfiscal.inf.br/nfe")
+@XmlRootElement(name = "NFe")
 public class TNFe {
 
 	@XmlElement(required = true)

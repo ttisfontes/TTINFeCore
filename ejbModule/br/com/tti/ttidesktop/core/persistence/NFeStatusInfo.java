@@ -24,4 +24,37 @@ public class NFeStatusInfo {
 	private Date dataEnviada;
 
 	private NFE_STATUS statusNFe;
+
+	public NFeId getNfeId() {
+		return nfeId;
+	}
+
+	public void setNfeId(NFeId nfeId) {
+		this.nfeId = nfeId;
+	}
+
+	public Date getDataEditada() {
+		return dataEditada;
+	}
+
+	public void setDataEditada(Date dataEditada) {
+		this.dataEditada = dataEditada;
+	}
+
+	public Date getDataEnviada() {
+		return dataEnviada;
+	}
+
+	public void setDataEnviada(Date dataEnviada) {
+		this.dataEnviada = dataEnviada;
+	}
+
+	public NFE_STATUS getStatusNFe() {
+		return statusNFe;
+	}
+
+	public void setStatusNFe(NFE_STATUS statusNFe) {
+		this.statusNFe = statusNFe;
+	}
+
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import br.com.tti.ttidesktop.core.persistence.NFeId;
 import br.com.tti.ttidesktop.core.persistence.Usuario;
+import br.com.tti.ttidesktop.core.util.TTIDesktopListener;
 
 public interface TTIDesktopClient {
 
@@ -14,7 +15,11 @@ public interface TTIDesktopClient {
 
 	public <T> List<T> findEntities(Class<T> classs) throws Exception;
 
-	/////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////
+
+	public void resgisterListener(TTIDesktopListener listener);
+
+	//////////////////////////////////////////////////////////////////////
 
 	public Usuario findUser(String id, String password) throws Exception;
 
@@ -25,5 +30,15 @@ public interface TTIDesktopClient {
 	public void saveNFe(String nfeId) throws Exception;
 
 	public void loadCurrentNFe(NFeId nfeId) throws Exception;
+
+	public boolean isAlive() throws Exception;
+
+	public void setUserOwner(String user);
+
+	public String getUserOwner();
+
+	public void killSession(String message) throws Exception;
+
+	public void destroy();
 
 }
